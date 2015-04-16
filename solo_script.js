@@ -1,5 +1,8 @@
 // ! ! !
 // Three Bugs
+//line 22: changed calculateSTI(array) to calculateSTI(array[i])
+//line 69: changed "return basePercent - 1" to a "return basePercent"
+//line 45: changed "newArray[3] = baseSalary * bonus;" to "newArray[3] = Math.round(baseSalary * bonus);"
 
 var arrayAtticus = ["Atticus", "2405", "47000", 3];
 var arrayJem = ["Jem", "62347", "63500", 4];
@@ -16,7 +19,7 @@ position = document.getElementById('content');
 //Loop the array, extracting each array and writing information to the DOM
 //Note that the information is not 'clean'
 for(var i = 0; i < array.length; i++){
-	array[i] = calculateSTI(array);
+	array[i] = calculateSTI(array[i]);
  	newEl = document.createElement('li');
 	newText = document.createTextNode(array[i]);
 	newEl.appendChild(newText);
@@ -37,10 +40,10 @@ function calculateSTI(array){
     bonus = 0.13;
   }
 
-  newArray[1] = bonus;
-  newArray[2] = baseSalary * (1.0 + bonus);
-  newArray[3] = baseSalary * bonus;
-  console.log(newArray[0] + " " + newArray[1] + " " + newArray[2] + " " + newArray[3]);
+  newArray[1] = " " + bonus;
+  newArray[2] = " " + baseSalary * (1.0 + bonus);
+  newArray[3] = " " + Math.round(baseSalary * bonus);
+  console.log(newArray[0] + ", " + newArray[1] + ", " + newArray[2] + ", " + newArray[3]);
   return newArray;
 }
 
@@ -63,7 +66,7 @@ function getBaseSTI(reviewScore){
       basePercent = 0.10;
       break;
   }
-  return basePercent - 1;
+  return basePercent;
 }
 
 function getYearAdjustment(employeeNumber){

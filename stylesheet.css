@@ -1,0 +1,13 @@
+body{
+	background-image: url("hhg.jpg");
+	background-color: black;
+	font-color: white;
+	padding-top: 50;
+}
+
+li{
+	list-style-type: none;
+	font-family: helvetica;
+	font-size: 20;
+	color: white;
+}
